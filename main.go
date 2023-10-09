@@ -34,7 +34,7 @@ func main() {
 		fmt.Println("Enter the number of tickets: ")
 		fmt.Scan(&userTickets)
 
-		if userTickets > remainingTickets {
+		if userTickets <= remainingTickets {
 
 			remainingTickets = remainingTickets - userTickets
 
@@ -63,7 +63,6 @@ func main() {
 
 		} else {
 			fmt.Printf("You can't book more than the %v but from 1-%v\n", remainingTickets, remainingTickets)
-			continue
 
 		}
 		
