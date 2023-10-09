@@ -36,11 +36,7 @@ func main() {
 
 		if userTickets > remainingTickets {
 
-			fmt.Printf("You can't book more than the %v but from 1-%v\n", remainingTickets, remainingTickets)
-			continue
-		}
-
-		remainingTickets = remainingTickets - userTickets
+			remainingTickets = remainingTickets - userTickets
 
 		bookings = append(bookings, firstName+" "+lastName)
 
@@ -63,6 +59,15 @@ func main() {
 		if remainingTickets == 0 {
 			fmt.Printf("Our tickets are all booked.come back next year")
 			break
+		} 
+
+		} else {
+			fmt.Printf("You can't book more than the %v but from 1-%v\n", remainingTickets, remainingTickets)
+			continue
+
 		}
+		
+
+		
 	}
 }
