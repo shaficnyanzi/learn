@@ -46,7 +46,7 @@ func main() {
 			fmt.Printf("%v tickets are available now for the %v\n", remainingTickets, conferenceName)
 
 			//function that calls out the first names of users who have booked a ticket
-			firstNames := (bookings)
+			firstNames := getfirstNames(bookings)
 			fmt.Printf("The first names of all our bookings are %v\n", firstNames)
 
 			if remainingTickets == 0 {
