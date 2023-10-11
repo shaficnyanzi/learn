@@ -6,7 +6,7 @@ import (
 )
     const conferenceTicket int = 60
     var conferenceName = "Go conference"
-	var remainingTickets uint = 60
+	var RemainingTickets uint = 60
 	var bookings []string
 
 func main() {
@@ -16,17 +16,17 @@ func main() {
 	for {
 		firstName, lastName, email, userTickets := getUserInput()
 		//function that contains user validation data
-		isValidName, isValidEmail, isValidTicketNumber := ValidateUserInput(firstName, lastName, email, userTickets, remainingTickets)
+		isValidName, isValidEmail, isValidTicketNumber := ValidateUserInput(firstName, lastName, email, userTickets, RemainingTickets)
 
 		if isValidName && isValidEmail && isValidTicketNumber {
 			//function to book the ticket
-			bookTicket(remainingTickets, userTickets, bookings, firstName, lastName, email, conferenceName )  
+			bookTicket(RemainingTickets, userTickets, bookings, firstName, lastName, email, conferenceName )  
 
 			//function that calls out the first names of users who have booked a ticket
 			firstNames := getfirstNames()
 			fmt.Printf("The first names of all our bookings are %v\n", firstNames)
 
-			if remainingTickets == 0 {
+			if RemainingTickets == 0 {
 				fmt.Printf("Our tickets are all booked.come back next year")
 				break
 			}
@@ -48,7 +48,7 @@ func main() {
 }
 func greetusers() {
 	fmt.Println("welcome to", conferenceName, "booking system")
-	fmt.Println("We are open with", conferenceTicket, " tickets still available,we have only", remainingTickets, "available")
+	fmt.Println("We are open with", conferenceTicket, " tickets still available,we have only", RemainingTickets, "available")
 	fmt.Println("feel at home here!")
 
 }
